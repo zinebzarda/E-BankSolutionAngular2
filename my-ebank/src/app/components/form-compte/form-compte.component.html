@@ -1,0 +1,39 @@
+<form [formGroup]="compteForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="type">Type de compte</label>
+    <select id="type" formControlName="type" class="form-control">
+      <option value="courant">Courant</option>
+      <option value="epargne">Épargne</option>
+    </select>
+    <div *ngIf="compteForm.get('type')?.invalid && compteForm.get('type')?.touched" class="text-danger">
+      Type de compte est requis.
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="soldeInitial">Solde initial</label>
+    <input id="soldeInitial" formControlName="soldeInitial" class="form-control" type="number" />
+    <div *ngIf="compteForm.get('soldeInitial')?.invalid && compteForm.get('soldeInitial')?.touched" class="text-danger">
+      <div *ngIf="compteForm.get('soldeInitial')?.errors?.['required']">Solde initial est requis.</div>
+      <div *ngIf="compteForm.get('soldeInitial')?.errors?.['min']">Le solde initial ne peut pas être négatif.</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="utilisateurId">ID Utilisateur</label>
+    <input id="utilisateurId" formControlName="utilisateurId" class="form-control" type="number" />
+    <div *ngIf="compteForm.get('utilisateurId')?.invalid && compteForm.get('utilisateurId')?.touched" class="text-danger">
+      ID Utilisateur est requis.
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="dateCreation">Date de création</label>
+    <input id="dateCreation" formControlName="dateCreation" class="form-control" type="date" />
+    <div *ngIf="compteForm.get('dateCreation')?.invalid && compteForm.get('dateCreation')?.touched" class="text-danger">
+      Date de création est requise.
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-primary" [disabled]="compteForm.invalid">Ajouter le compte</button>
+</form>

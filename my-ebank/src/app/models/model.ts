@@ -7,7 +7,7 @@ export interface Utilisateur {
   compte: Compte[];
 }
 
-// transfert.model.ts
+// TransfertArgent.model.ts
 export interface TransfertArgent {
   idTranfert: number;
   montant: number;
@@ -25,7 +25,7 @@ export interface Transaction {
   compte: Compte;
 }
 
-// compteBancaire.model.ts
+// Compte.model.ts
 export interface Compte {
   idCompte: number;
   type: string;
@@ -37,7 +37,7 @@ export interface Compte {
   transfertArgent: TransfertArgent[];
 }
 
-// carteBancaire.model.ts
+// carte.model.ts
 export interface Carte {
   idCarte: number;
   numeroCarte: string;
