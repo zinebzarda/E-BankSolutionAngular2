@@ -21,6 +21,6 @@ export class DashboardComponent implements OnInit {
 
   logout(): void {
     localStorage.removeItem('token'); // Remove the token
-    window.location.href = '/login'; // Redirect to login page
+    window.location.href = '/register'; // Redirect to login page
   }
 }

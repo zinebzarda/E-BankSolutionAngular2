@@ -1,38 +1,63 @@
-<div class="container mt-5">
-  <div class="row">
-    <div class="col-md-6 offset-md-3">
-      <h2>Register</h2>
+<body>
+<nav class="navbar">
+  <div class="container">
+    <a href="#" class="logo">MyBank</a>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a routerLink="/login">Login</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="container">
+  <div class="form-card">
+    <div class="left-section">
+      <div class="illustration">
+        <a href="https://imgbb.com/">
+          <img src="https://i.ibb.co/m9GsSM5/bank-removebg-preview.png" alt="bank-removebg-preview" border="0" /></a>
+      </div>
+      <h2>Let's set up your bank account!</h2>
+      <p>Your money is safe with us! Don't worry, it should take a couple of minutes.</p>
+    </div>
+    <div class="right-section">
+      <h2>Create an account</h2>
       <form [formGroup]="registerForm" (ngSubmit)="register()">
         <div class="form-group">
-          <label for="username">Username:</label>
+          <label for="username">Username</label>
           <input id="username" formControlName="username" class="form-control" type="text" />
           <div *ngIf="registerForm.get('username')?.invalid && registerForm.get('username')?.touched" class="text-danger">
             Username is required.
           </div>
         </div>
         <div class="form-group">
-          <label for="email">Email:</label>
+          <label for="email">Email</label>
           <input id="email" formControlName="email" class="form-control" type="email" />
           <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched" class="text-danger">
             A valid email is required.
           </div>
         </div>
         <div class="form-group">
-          <label for="password">Password:</label>
+          <label for="password">Password</label>
           <input id="password" formControlName="password" class="form-control" type="password" />
           <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched" class="text-danger">
             Password is required and must be at least 8 characters.
           </div>
         </div>
         <div class="form-group">
-          <label for="confirmPassword">Confirm Password:</label>
+          <label for="confirmPassword">Confirm Password</label>
           <input id="confirmPassword" formControlName="confirmPassword" class="form-control" type="password" />
           <div *ngIf="registerForm.hasError('mismatch') && registerForm.get('confirmPassword')?.touched" class="text-danger">
             Passwords must match.
           </div>
         </div>
-        <button type="submit" class="btn btn-primary" [disabled]="registerForm.invalid">Register</button>
+        <button type="submit" class="btn btn-primary" [disabled]="registerForm.invalid">Sign Up</button>
+        <p>OR</p>
+        <button type="button" class="btn btn-secondary">You can register with Facebook</button>
       </form>
     </div>
   </div>
 </div>
+</body>
+
