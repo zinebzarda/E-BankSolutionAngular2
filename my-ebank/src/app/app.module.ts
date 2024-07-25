@@ -8,21 +8,21 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { RegisterComponent } from './components/register/register.component';
-import { FormCompteComponent } from './components/form-compte/form-compte.component';
+import { CompteComponent } from './components/compte/compte.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    CompteComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule,
-    FormCompteComponent
+    ReactiveFormsModule
   ],
   providers: [
     provideHttpClient(withFetch())

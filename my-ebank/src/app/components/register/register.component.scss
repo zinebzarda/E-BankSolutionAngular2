@@ -10,8 +10,15 @@ body {
   width: 100%;
   background-color: #0a3e70;
   padding: 10px 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
-
+.navbar .container{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
 .container {
   display: flex;
   justify-content: center;

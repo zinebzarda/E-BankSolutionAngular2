@@ -32,8 +32,8 @@ export class LoginComponent implements OnInit {
         const token = response.body;
         if (token) {
           console.log('Login successful:', token);
-          localStorage.setItem('token', token); // Sauvegarder le token
-          this.router.navigate(['/dashboard']); // Rediriger vers le tableau de bord
+          localStorage.setItem('token', token);
+          this.router.navigate(['/dashboard']);
         } else {
           console.error('Unexpected response structure:', response);
         }

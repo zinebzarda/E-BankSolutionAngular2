@@ -12,15 +12,22 @@ export class DashboardComponent implements OnInit {
   constructor(private gl: GlobaleService) {}
 
   ngOnInit(): void {
-    this.gl.getAllUtilisateurs().subscribe((users: any[]) => {
-      this.listUsers = users;
-    }, (error: any) => {
-      console.error('Failed to fetch users:', error);
-    });
+    this.getAllUtilisateurs();
+  }
+
+  getAllUtilisateurs(): void {
+    this.gl.getAllUtilisateurs().subscribe(
+      (users: any[]) => {
+        this.listUsers = users;
+      },
+      (error: any) => {
+        console.error('Failed to fetch users:', error);
+      }
+    );
   }
 
   logout(): void {
-    localStorage.removeItem('token'); // Remove the token
-    window.location.href = '/register'; // Redirect to login page
+    localStorage.removeItem('token');
+    window.location.href = '/register';
   }
 }
